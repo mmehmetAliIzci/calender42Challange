@@ -1,0 +1,52 @@
+  <head>
+    <title>
+      StopWatch
+    </title>
+  </head>
+  <body>
+
+    <input id="green" class="green"  name="color" type="radio" checked="checked" />
+
+    <div class="stopwatch">
+
+      <input id="start" class="start" name="controls" type="radio" />
+      <input id="stop" class="stop" name="controls" type="radio" />
+      <input id="reset" class="reset" name="controls" type="radio" />
+
+      <div class="container">
+        <div class="arrow_cont">
+          <div class="arrow">
+          </div>
+        </div>
+
+        <div class="digit_contianer">
+          <div *ngFor="#item of items;  #i = index">
+            <div *ngIf="(item%60/10)<1" class="animcont">
+              <div class="min1">
+                0 {{item%60}}
+              </div>
+            </div>
+            <div *ngIf="!((item%60/10)<1)"class="animcont">
+              <div class="min">
+                {{item%60}}
+              </div>
+            </div>
+            <div *ngIf="i !=2"class="space">
+              :
+            </div>
+          </div>
+        </div>
+        <div class="controls">
+          <label (click)="stopCounting()" id="haptic" class="stop_" for="stop">
+          </label>
+          <label (click)="startCounting()" id="haptic2" class="start_" for="start">
+          </label>
+          <label (click)="resetCounting()" id="haptic3" class="reset_" for="reset">
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+
+  </body>

@@ -1,7 +1,7 @@
 # calender42Challange
 
 ## Description
-Sample Calender42 API usage with Chronometer
+Simple Calender42 API usage with Chronometer
 
 ## Usage
 Follow the following steps and you're good to go! Important: Typescript and npm has to be installed on your machine!

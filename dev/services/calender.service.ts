@@ -16,7 +16,7 @@ export class CalenderService  {
     constructor(public http: Http) {
     }
 
-    postTime(start_time,end_time) {
+    postTime(start_time,end_time,time_zone) {
 
 
       return new Promise(resolve => {
@@ -30,9 +30,9 @@ export class CalenderService  {
                       event_type: "normal",
                       title: "My Tracked time",
                       start: start_time,
-                      start_timezone: "",
+                      start_timezone: time_zone,
                       end: end_time,
-                      end_timezone: "",
+                      end_timezone: time_zone,
                       rsvp_status: "attending"
                   };
         let data = JSON.stringify(PAYLOAD);
@@ -43,6 +43,7 @@ export class CalenderService  {
        .subscribe((response) => {
            // we've got back the raw data, now generate the core schedule data
            // and save the data for later reference
+           console.log(response);
            resolve(response);
         });
      });

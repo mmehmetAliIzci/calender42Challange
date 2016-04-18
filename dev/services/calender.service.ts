@@ -37,13 +37,14 @@ export class CalenderService  {
                   };
         let data = JSON.stringify(PAYLOAD);
 
+       console.log("Sending with following payload", PAYLOAD)
 
        this.http.post(URL,data,{headers: headers})
        .map(res => res.json())
        .subscribe((response) => {
            // we've got back the raw data, now generate the core schedule data
            // and save the data for later reference
-           console.log(response);
+           console.log("Response" ,response);
            resolve(response);
         },
         (error) => alert(error),
